@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,12 +125,12 @@
     <div class="container">
         <!-- Language Switcher -->
         <div class="language-switcher">
-            <button class="language-btn active" onclick="switchLanguage('cs')" id="btn-cs">🇨🇿 Čeština</button>
-            <button class="language-btn" onclick="switchLanguage('en')" id="btn-en">🇬🇧 English</button>
+            <button class="language-btn" onclick="switchLanguage('cs')" id="btn-cs">🇨🇿 Čeština</button>
+            <button class="language-btn active" onclick="switchLanguage('en')" id="btn-en">🇬🇧 English</button>
         </div>
 
         <!-- Czech Content -->
-        <div id="content-cs" class="language-content active">
+        <div id="content-cs" class="language-content">
             <h1>Zásady ochrany soukromí pro aplikaci FitTracker</h1>
             
             <div class="date">Datum poslední aktualizace: 30. června 2025</div>
@@ -308,7 +308,7 @@
         </div>
 
         <!-- English Content -->
-        <div id="content-en" class="language-content">
+        <div id="content-en" class="language-content active">
             <h1>Privacy Policy for FitTracker App</h1>
             
             <div class="date">Last updated: June 30, 2025</div>
@@ -514,6 +514,9 @@
             const preferredLang = localStorage.getItem('preferred-language');
             if (preferredLang && (preferredLang === 'en' || preferredLang === 'cs')) {
                 switchLanguage(preferredLang);
+            } else {
+                // Default to English if no preference is stored
+                switchLanguage('en');
             }
         });
     </script>
